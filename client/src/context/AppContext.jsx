@@ -37,7 +37,7 @@ export function AppContextProvider({ children }) {
             navigate("/");
         } catch (error) {
             console.error("Login Failed:", error);
-            const errMsg = err?.response?.data?.error ||
+            const errMsg = error?.response?.data?.error ||
                 "Invalid email or password";
             toast.error(errMsg);
             throw new Error(errMsg);
@@ -52,7 +52,7 @@ export function AppContextProvider({ children }) {
             navigate("/");
         } catch (error) {
             console.error("Registration Failed:", error);
-            const errMsg = err?.response?.data?.error ||
+            const errMsg = error?.response?.data?.error ||
                 "Registration Failed";
             toast.error(errMsg);
             throw new Error(errMsg);
